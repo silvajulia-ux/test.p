@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seu Nome — Portfólio de Redações | Ensino Médio</title>
+  <meta name="description" content="Site pessoal de conclusão do Ensino Médio: linha do tempo da trajetória escolar e portfólio com as 15 redações completas, em tons de cinza." />
+  <meta name="author" content="Seu Nome" />
+  <meta name="theme-color" content="#27272a" />
+
+  <!-- Open Graph (para o link ficar bonito no WhatsApp, Instagram etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Seu Nome — Portfólio de Redações | Ensino Médio" />
+  <meta property="og:description" content="15 redações completas e a linha do tempo de 14 anos de escola." />
+  <meta property="og:image" content="img/og-cover.jpg" />
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+
+  <!-- CSS próprio (tons de cinza). Nenhuma dependência externa. -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Se o JavaScript estiver desativado, as seções aparecem normalmente -->
+  <noscript>
+    <style>[data-reveal] { opacity: 1 !important; transform: none !important; }</style>
+  </noscript>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- ============================================================
+       CABEÇALHO FIXO
+       ============================================================ -->
+  <header class="site-header" id="topo">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">
+        <span class="brand-mark" aria-hidden="true" data-config="iniciais">SN</span>
+        <span class="brand-text">
+          <strong data-config="nome">Seu Nome</strong>
+          <small>Portfólio de Redações</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+        <span class="nav-toggle-label">Menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span></span>
+      </button>
+
+      <nav class="site-nav" id="menu-principal" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio" class="is-active">Início</a></li>
+          <li><a href="#trajetoria">Trajetória</a></li>
+          <li><a href="#redacoes">Redações</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============================================================
+         SEÇÃO 1 — HERO / APRESENTAÇÃO
+         ============================================================ -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            Concluinte do Ensino Médio <span aria-hidden="true">·</span>
+            <span data-config="anoConclusao">2026</span>
+          </p>
+
+          <!-- ✏️ EDITE AQUI: seu nome e sua apresentação -->
+          <h1 class="hero-title">
+            Olá, eu sou<br />
+            <span class="hero-name" data-config="nome">Seu Nome</span>.
+          </h1>
+
+          <p class="hero-lead">
+            Este é o meu site de encerramento do Ensino Médio, feito para a disciplina de
+            <strong>Programação Web</strong>. Aqui reuni a minha trajetória escolar e as
+            <strong>15 redações</strong> que escrevi ao longo do 3º ano — cada texto é uma parte
+            da história que construí na escola.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#redacoes">
+              Ler as 15 redações <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-ghost" href="#trajetoria">Ver minha trajetória</a>
+          </div>
+
+          <dl class="hero-stats">
+            <div><dt>Redações</dt><dd>15</dd></div>
+            <div><dt>Fases da escola</dt><dd>6</dd></div>
+            <div><dt>Anos de escola</dt><dd>14</dd></div>
+          </dl>
+        </div>
+
+        <figure class="hero-figure">
+          <!-- ✏️ Troque img/perfil.jpg pela sua foto -->
+          <img src="img/perfil.jpg" width="900" height="1100"
+               alt="Foto de perfil do estudante autor do site" loading="eager" />
+          <figcaption>
+            <span class="figcaption-label">Foto de perfil</span>
+            <span class="figcaption-text">Substitua <code>img/perfil.jpg</code> pela sua foto</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Destaque inspirador exigido pelo briefing -->
+      <div class="wrap">
+        <blockquote class="hero-quote">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <p>
+            Chegar ao final do Ensino Médio é fechar um ciclo marcante para abrir as portas do
+            mundo. Cada linha de código escrita neste projeto representa não apenas o seu
+            aprendizado técnico, mas também a história única que você construiu nestes anos de
+            escola. Tenha orgulho da sua trajetória, coragem para encarar os novos desafios e a
+            certeza de que você é o único autor do seu próprio futuro!
+          </p>
+          <footer>Mensagem de encerramento <span aria-hidden="true">·</span> Ensino Médio</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEÇÃO 2 — LINHA DO TEMPO (MEMÓRIAS ESCOLARES)
+         ============================================================ -->
+    <section class="section" id="trajetoria">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Memórias escolares</p>
+          <h2 class="section-title">Quatorze anos de escola, em seis fases</h2>
+          <p class="section-lead">
+            Do Jardim de Infância ao 3º ano do Ensino Médio. Cada fase tem uma foto reservada e
+            um espaço de texto para eu contar os causos, as descobertas e os desafios que vivi.
+          </p>
+        </header>
+
+        <!-- Caixa do modo de edição: os textos de exemplo viram campos editáveis
+             e ficam salvos no próprio navegador (localStorage). -->
+        <div class="tl-tools" data-reveal>
+          <div class="tl-tools-copy">
+            <strong>Textos editáveis</strong>
+            <span>
+              Ative o modo de edição e escreva seus relatos direto no site: o rascunho fica salvo
+              neste navegador e você pode copiar o texto para o HTML quando terminar.
+            </span>
+          </div>
+          <div class="tl-tools-actions">
+            <button class="btn btn-sm" type="button" id="tl-toggle" aria-pressed="false">
+              <span class="tl-toggle-icon" aria-hidden="true">✎</span>
+              <span id="tl-toggle-label">Editar textos</span>
+            </button>
+            <button class="btn btn-ghost btn-sm" type="button" id="tl-reset" hidden>
+              Restaurar exemplos
+            </button>
+          </div>
+          <p class="tl-tools-status" id="tl-status" role="status" aria-live="polite"></p>
+        </div>
+
+        <ol class="timeline">
+          <!-- FASE 01 -->
+          <li class="tl-item" data-reveal>
+            <div class="tl-marker" aria-hidden="true"><span>01</span></div>
+            <article class="tl-card">
+              <div class="tl-media">
+                <!-- ✏️ Troque por img/fase-1.jpg (sua foto desta fase) -->
+                <img src="img/fase-1.jpg" width="1200" height="800" alt="Foto de lembrança do Jardim de Infância" loading="lazy" />
+                <p class="tl-caption">Jardim de Infância • primeiras descobertas</p>
+              </div>
+              <div class="tl-body">
+                <p class="tl-period" data-edit="fase-1-periodo">2013 — 2014</p>
+                <h3 class="tl-title">Jardim de Infância / Pré-escola</h3>
+                <p class="tl-text" data-edit="fase-1-texto">
+                  Foi onde tudo começou: as primeiras letras, as rodas de conversa e a descoberta de
+                  que aprender podia ser divertido. Lembro das tardes de tinta guache, das músicas
+                  de roda e da professora que guardava cada desenho na pasta com o maior cuidado.
+                </p>
+                <ul class="tl-list">
+                  <li>Primeira apresentação de teatro da escola</li>
+                  <li>Aprendi a escrever o meu nome inteiro</li>
+                </ul>
+                <p class="tl-note" data-edit="fase-1-nota">
+                  <strong>Momento marcante:</strong> o dia em que levei o meu livro preferido para
+                  a rodinha de leitura e contei a história para a turma toda.
+                </p>
+              </div>
+            </article>
+          </li>
+
+          <!-- FASE 02 -->
+          <li class="tl-item" data-reveal>
+            <div class="tl-marker" aria-hidden="true"><span>02</span></div>
+            <article class="tl-card">
+              <div class="tl-media">
+                <img src="img/fase-2.jpg" width="1200" height="800" alt="Foto de lembrança do Ensino Fundamental I" loading="lazy" />
+                <p class="tl-caption">Ensino Fundamental I • alfabetização e amizades</p>
+              </div>
+              <div class="tl-body">
+                <p class="tl-period" data-edit="fase-2-periodo">2015 — 2019</p>
+                <h3 class="tl-title">Ensino Fundamental I <span class="tl-sub">1º ao 5º ano</span></h3>
+                <p class="tl-text" data-edit="fase-2-texto">
+                  A fase em que a escola virou rotina e a turma virou família. Foram os anos das
+                  feiras de ciências, das provas de tabuada e das amizades que continuam até hoje.
+                  Foi aqui que descobri o gosto por escrever e por entender como as coisas funcionam.
+                </p>
+                <ul class="tl-list">
+                  <li>Primeiro caderno cheio de redações e desenhos</li>
+                  <li>Campeonato de soletração da escola</li>
+                </ul>
+                <p class="tl-note" data-edit="fase-2-nota">
+                  <strong>Desafio superado:</strong> perder o medo de ler em voz alta na frente da
+                  turma — hoje é uma das partes de que mais gosto nas apresentações.
+                </p>
+              </div>
+            </article>
+          </li>
+
+          <!-- FASE 03 -->
+          <li class="tl-item" data-reveal>
+            <div class="tl-marker" aria-hidden="true"><span>03</span></div>
+            <article class="tl-card">
+              <div class="tl-media">
+                <img src="img/fase-3.jpg" width="1200" height="800" alt="Foto de lembrança do Ensino Fundamental II" loading="lazy" />
+                <p class="tl-caption">Ensino Fundamental II • mudanças e descobertas</p>
+              </div>
+              <div class="tl-body">
+                <p class="tl-period" data-edit="fase-3-periodo">2020 — 2023</p>
+                <h3 class="tl-title">Ensino Fundamental II <span class="tl-sub">6º ao 9º ano</span></h3>
+                <p class="tl-text" data-edit="fase-3-texto">
+                  Anos de muitas mudanças: mais professores, mais matérias e, no meio do caminho, o
+                  ensino remoto. Aprendi a estudar com autonomia, a organizar meus horários e a
+                  pedir ajuda quando era preciso. Também foi quando comecei a me interessar por
+                  tecnologia.
+                </p>
+                <ul class="tl-list">
+                  <li>Primeiro contato com programação e robótica</li>
+                  <li>Trabalho em grupo que virou amizade para a vida</li>
+                </ul>
+                <p class="tl-note" data-edit="fase-3-nota">
+                  <strong>Curiosidade:</strong> montei meu primeiro “site” em um editor de texto
+                  simples e fiquei horas tentando descobrir por que a imagem não aparecia.
+                </p>
+              </div>
+            </article>
+          </li>
+
+          <!-- FASE 04 -->
+          <li class="tl-item" data-reveal>
+            <div class="tl-marker" aria-hidden="true"><span>04</span></div>
+            <article class="tl-card">
+              <div class="tl-media">
+                <img src="img/fase-4.jpg" width="1200" height="800" alt="Foto de lembrança do 1º ano do Ensino Médio" loading="lazy" />
+                <p class="tl-caption">1º ano • novo prédio, novas pessoas</p>
+              </div>
+              <div class="tl-body">
+                <p class="tl-period" data-edit="fase-4-periodo">2024</p>
+                <h3 class="tl-title">1º ano do Ensino Médio</h3>
+                <p class="tl-text" data-edit="fase-4-texto">
+                  Chegada ao Ensino Médio: turma nova, professores novos e a sensação de que o
+                  tempo começa a correr mais rápido. Foi o ano de descobrir o que eu gostava de
+                  estudar de verdade e de aprender a lidar com a pressão das primeiras notas.
+                </p>
+                <ul class="tl-list">
+                  <li>Primeira feira de ciências do Ensino Médio</li>
+                  <li>Decisão de me dedicar mais à leitura e à escrita</li>
+                </ul>
+                <p class="tl-note" data-edit="fase-4-nota">
+                  <strong>Momento inesquecível:</strong> a primeira redação com nota máxima — e a
+                  percepção de que escrever bem é treino, não sorte.
+                </p>
+              </div>
+            </article>
+          </li>
+
+          <!-- FASE 05 -->
+          <li class="tl-item" data-reveal>
+            <div class="tl-marker" aria-hidden="true"><span>05</span></div>
+            <article class="tl-card">
+              <div class="tl-media">
+                <img src="img/fase-5.jpg" width="1200" height="800" alt="Foto de lembrança do 2º ano do Ensino Médio" loading="lazy" />
+                <p class="tl-caption">2º ano • aprofundando temas e repertórios</p>
+              </div>
+              <div class="tl-body">
+                <p class="tl-period" data-edit="fase-5-periodo">2025</p>
+                <h3 class="tl-title">2º ano do Ensino Médio</h3>
+                <p class="tl-text" data-edit="fase-5-texto">
+                  O ano em que passei a escrever com mais frequência: redações semanais, leituras
+                  obrigatórias e muitos debates em sala. Aprendi a montar repertório, a estruturar
+                  argumentos e a revisar o próprio texto com mais criticidade.
+                </p>
+                <ul class="tl-list">
+                  <li>Rotina de uma redação por semana</li>
+                  <li>Participação em simulado e em projeto de leitura</li>
+                </ul>
+                <p class="tl-note" data-edit="fase-5-nota">
+                  <strong>Desafio superado:</strong> controlar a ansiedade para escrever no tempo
+                  da prova — hoje consigo planejar, escrever e revisar com calma.
+                </p>
+              </div>
+            </article>
+          </li>
+
+          <!-- FASE 06 -->
+          <li class="tl-item" data-reveal>
+            <div class="tl-marker" aria-hidden="true"><span>06</span></div>
+            <article class="tl-card">
+              <div class="tl-media">
+                <img src="img/fase-6.jpg" width="1200" height="800" alt="Foto de lembrança do 3º ano do Ensino Médio" loading="lazy" />
+                <p class="tl-caption">3º ano • conclusão e novos começos</p>
+              </div>
+              <div class="tl-body">
+                <p class="tl-period" data-edit="fase-6-periodo">2026</p>
+                <h3 class="tl-title">3º ano do Ensino Médio <span class="tl-sub">conclusão</span></h3>
+                <p class="tl-text" data-edit="fase-6-texto">
+                  O ano de fechar o ciclo: as 15 redações deste portfólio, o projeto de Programação
+                  Web e a preparação para o próximo passo. Foi o período mais intenso e também o
+                  mais significativo, porque cada entrega tinha um pouco de tudo o que aprendi.
+                </p>
+                <ul class="tl-list">
+                  <li>Desenvolvimento deste site em HTML, CSS e JavaScript</li>
+                  <li>Portfólio de 15 redações sobre temas contemporâneos</li>
+                </ul>
+                <p class="tl-note" data-edit="fase-6-nota">
+                  <strong>Momento marcante:</strong> ver o site funcionando pela primeira vez e
+                  perceber que o que eu escrevia também podia virar código.
+                </p>
+              </div>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEÇÃO 3 — PORTFÓLIO DE REDAÇÕES
+         ============================================================ -->
+    <section class="section section-alt" id="redacoes">
+      <div class="wrap">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">Portfólio de redações</p>
+          <h2 class="section-title">15 textos, 15 temas contemporâneos</h2>
+          <p class="section-lead">
+            Todas as redações estão aqui na íntegra. Use a busca para encontrar uma palavra-chave,
+            filtre por tema ou abra a leitura completa em uma janela confortável.
+          </p>
+        </header>
+
+        <!-- Barra de busca + contador -->
+        <div class="essay-toolbar" data-reveal>
+          <div class="search-field">
+            <label class="sr-only" for="busca-redacoes">Buscar redações por palavra-chave</label>
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+            </svg>
+            <input
+              type="search"
+              id="busca-redacoes"
+              class="search-input"
+              placeholder="Buscar por tema, título ou palavra-chave…"
+              autocomplete="off"
+              aria-describedby="resultado-busca"
+            />
+            <button class="search-clear" id="limpar-busca" type="button" aria-label="Limpar busca" hidden>×</button>
+          </div>
+          <p class="results-info" id="resultado-busca" aria-live="polite">15 redações disponíveis</p>
+        </div>
+
+        <!-- Filtros por tema -->
+        <div class="filters" role="group" aria-label="Filtrar redações por tema" data-reveal>
+          <button class="chip is-active" type="button" data-filter="todas" aria-pressed="true">Todas <span class="chip-count">15</span></button>
+          <button class="chip" type="button" data-filter="meio-ambiente" aria-pressed="false">Meio ambiente <span class="chip-count">4</span></button>
+          <button class="chip" type="button" data-filter="sociedade" aria-pressed="false">Sociedade e direitos <span class="chip-count">3</span></button>
+          <button class="chip" type="button" data-filter="saude" aria-pressed="false">Saúde e comportamento <span class="chip-count">2</span></button>
+          <button class="chip" type="button" data-filter="tecnologia" aria-pressed="false">Tecnologia e mídia <span class="chip-count">1</span></button>
+          <button class="chip" type="button" data-filter="ciencia" aria-pressed="false">Ciência e tecnologia <span class="chip-count">1</span></button>
+          <button class="chip" type="button" data-filter="economia" aria-pressed="false">Economia <span class="chip-count">2</span></button>
+          <button class="chip" type="button" data-filter="cultura" aria-pressed="false">Cultura e patrimônio <span class="chip-count">2</span></button>
+        </div>
+
+        <!-- Grade de cards: um card por redação (o texto integral fica nos
+             <template> do fim do arquivo). -->
+        <div class="essay-grid" id="lista-redacoes">
+          <!-- BEGIN:CARDS -->
+        <article class="essay-card" data-cat="meio-ambiente" data-num="1" data-reveal>
+          <div class="card-top">
+            <span class="card-num">01</span>
+            <span class="card-cat">Meio ambiente</span>
+          </div>
+          <h3 class="card-title">Espécies em extinção e equilíbrio ecológico: desafios para a conservação da fauna brasileira</h3>
+          <p class="card-preview">O Brasil abriga uma das maiores biodiversidades do planeta, com uma fauna rica e única. No entanto, o avanço do desmatamento, da caça ilegal, da poluição e das mudanças climáticas tem colocado inúmeras…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="1" aria-label="Ler a redação 1 completa: Espécies em extinção e equilíbrio ecológico: desafios para a conservação da fauna brasileira">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="sociedade" data-num="2" data-reveal>
+          <div class="card-top">
+            <span class="card-num">02</span>
+            <span class="card-cat">Sociedade e direitos</span>
+          </div>
+          <h3 class="card-title">Migração e acolhimento: desafios da convivência em contextos globais</h3>
+          <p class="card-preview">Os fluxos migratórios internacionais intensificaram-se nas últimas décadas, impulsionados por conflitos, crises econômicas, mudanças climáticas e busca por melhores condições de vida. Nesse cenário, o…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="2" aria-label="Ler a redação 2 completa: Migração e acolhimento: desafios da convivência em contextos globais">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="meio-ambiente" data-num="3" data-reveal>
+          <div class="card-top">
+            <span class="card-num">03</span>
+            <span class="card-cat">Meio ambiente</span>
+          </div>
+          <h3 class="card-title">El Niño e mudanças climáticas: desafios para a preparação da sociedade diante de eventos extremos</h3>
+          <p class="card-preview">O fenômeno El Niño, caracterizado pelo aquecimento anormal das águas do Oceano Pacífico, tem se tornado cada vez mais intenso e frequente em razão das mudanças climáticas. Seus efeitos — estiagens…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="3" aria-label="Ler a redação 3 completa: El Niño e mudanças climáticas: desafios para a preparação da sociedade diante de eventos extremos">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="saude" data-num="4" data-reveal>
+          <div class="card-top">
+            <span class="card-num">04</span>
+            <span class="card-cat">Saúde e comportamento</span>
+          </div>
+          <h3 class="card-title">Cultura fitness: bem-estar ou busca por estética inatingível</h3>
+          <p class="card-preview">A cultura fitness consolidou-se como um dos fenômenos mais marcantes da sociedade contemporânea. Se, por um lado, ela incentiva a prática de exercícios e a adoção de hábitos saudáveis, por outro, tem…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="4" aria-label="Ler a redação 4 completa: Cultura fitness: bem-estar ou busca por estética inatingível">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="sociedade" data-num="5" data-reveal>
+          <div class="card-top">
+            <span class="card-num">05</span>
+            <span class="card-cat">Sociedade e direitos</span>
+          </div>
+          <h3 class="card-title">Povos originários e direitos constitucionais: desafios para a efetivação da cidadania indígena no Brasil</h3>
+          <p class="card-preview">A Constituição Federal de 1988 representou um marco histórico ao reconhecer aos povos indígenas o direito à diferença cultural, à terra tradicionalmente ocupada e à autonomia organizativa. No entanto,…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="5" aria-label="Ler a redação 5 completa: Povos originários e direitos constitucionais: desafios para a efetivação da cidadania indígena no Brasil">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="tecnologia" data-num="6" data-reveal>
+          <div class="card-top">
+            <span class="card-num">06</span>
+            <span class="card-cat">Tecnologia e mídia</span>
+          </div>
+          <h3 class="card-title">Consumo, mídia e cultura: como as referências mediadas por algoritmos influenciam os modos de vida na sociedade contemporânea</h3>
+          <p class="card-preview">Na sociedade contemporânea, as redes sociais tornaram-se importantes meios de informação e entretenimento. Entretanto, os algoritmos dessas plataformas selecionam os conteúdos apresentados aos usuários,…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 1 min de leitura</span>
+            <button class="card-btn" type="button" data-open="6" aria-label="Ler a redação 6 completa: Consumo, mídia e cultura: como as referências mediadas por algoritmos influenciam os modos de vida na sociedade contemporânea">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="ciencia" data-num="7" data-reveal>
+          <div class="card-top">
+            <span class="card-num">07</span>
+            <span class="card-cat">Ciência e tecnologia</span>
+          </div>
+          <h3 class="card-title">Exploração espacial no século XXI: desafios para a conciliação entre avanço científico e responsabilidade social</h3>
+          <p class="card-preview">A exploração espacial representa uma das maiores conquistas da humanidade, permitindo avanços científicos e tecnológicos importantes. Entretanto, no século XXI, surge um debate sobre a necessidade de…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 1 min de leitura</span>
+            <button class="card-btn" type="button" data-open="7" aria-label="Ler a redação 7 completa: Exploração espacial no século XXI: desafios para a conciliação entre avanço científico e responsabilidade social">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="sociedade" data-num="8" data-reveal>
+          <div class="card-top">
+            <span class="card-num">08</span>
+            <span class="card-cat">Sociedade e direitos</span>
+          </div>
+          <h3 class="card-title">O respeito às diferenças como caminho para a superação dos conflitos sociais na sociedade contemporânea</h3>
+          <p class="card-preview">A sociedade contemporânea é marcada por uma intensa diversidade cultural, étnica, de gênero e de pensamento. No entanto, essa pluralidade, que deveria ser fonte de enriquecimento, frequentemente se…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="8" aria-label="Ler a redação 8 completa: O respeito às diferenças como caminho para a superação dos conflitos sociais na sociedade contemporânea">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="meio-ambiente" data-num="9" data-reveal>
+          <div class="card-top">
+            <span class="card-num">09</span>
+            <span class="card-cat">Meio ambiente</span>
+          </div>
+          <h3 class="card-title">Quando a seca encontra a enchente: impactos sociais e econômicos das mudanças no ciclo hidrológico</h3>
+          <p class="card-preview">As alterações no ciclo hidrológico, intensificadas pelas mudanças climáticas e pela ação humana, têm gerado um cenário paradoxal: regiões que sofrem com estiagens prolongadas também enfrentam enchentes…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="9" aria-label="Ler a redação 9 completa: Quando a seca encontra a enchente: impactos sociais e econômicos das mudanças no ciclo hidrológico">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="saude" data-num="10" data-reveal>
+          <div class="card-top">
+            <span class="card-num">10</span>
+            <span class="card-cat">Saúde e comportamento</span>
+          </div>
+          <h3 class="card-title">A estética como imperativo: riscos e implicações do uso indiscriminado de canetas emagrecedoras</h3>
+          <p class="card-preview">Na sociedade contemporânea, a busca por um corpo considerado ideal tornou-se quase uma obrigação social. Nesse contexto, as chamadas “canetas emagrecedoras” — medicamentos originalmente destinados ao…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="10" aria-label="Ler a redação 10 completa: A estética como imperativo: riscos e implicações do uso indiscriminado de canetas emagrecedoras">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="economia" data-num="11" data-reveal>
+          <div class="card-top">
+            <span class="card-num">11</span>
+            <span class="card-cat">Economia</span>
+          </div>
+          <h3 class="card-title">Da diversão ao endividamento: efeitos socioeconômicos das bets na vida de jovens brasileiros</h3>
+          <p class="card-preview">Nos últimos anos, as plataformas de apostas online, conhecidas como “bets”, conquistaram grande popularidade entre os jovens brasileiros. O que inicialmente se apresenta como uma forma de diversão e…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="11" aria-label="Ler a redação 11 completa: Da diversão ao endividamento: efeitos socioeconômicos das bets na vida de jovens brasileiros">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="meio-ambiente" data-num="12" data-reveal>
+          <div class="card-top">
+            <span class="card-num">12</span>
+            <span class="card-cat">Meio ambiente</span>
+          </div>
+          <h3 class="card-title">Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</h3>
+          <p class="card-preview">O Brasil consolidou-se, nas últimas décadas, como uma das maiores potências agropecuárias do mundo, contribuindo de forma decisiva para a economia nacional e para a segurança alimentar global. No entanto,…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="12" aria-label="Ler a redação 12 completa: Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="economia" data-num="13" data-reveal>
+          <div class="card-top">
+            <span class="card-num">13</span>
+            <span class="card-cat">Economia</span>
+          </div>
+          <h3 class="card-title">O desafio de reduzir as desigualdades entre as regiões do Brasil</h3>
+          <p class="card-preview">O Brasil é um país marcado por profundas desigualdades regionais. Enquanto o Sudeste e o Sul concentram a maior parte da riqueza, da infraestrutura e das oportunidades, o Norte e o Nordeste ainda…</p>
+          <div class="card-foot">
+            <span class="card-meta">4 parágrafos · 2 min de leitura</span>
+            <button class="card-btn" type="button" data-open="13" aria-label="Ler a redação 13 completa: O desafio de reduzir as desigualdades entre as regiões do Brasil">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="cultura" data-num="14" data-reveal>
+          <div class="card-top">
+            <span class="card-num">14</span>
+            <span class="card-cat">Cultura e patrimônio</span>
+          </div>
+          <h3 class="card-title">Preservação dos monumentos históricos e memória coletiva no Brasil contemporâneo (Abordagem I)</h3>
+          <p class="card-preview">A preservação dos monumentos históricos no Brasil contemporâneo enfrenta obstáculos significativos que comprometem a memória coletiva e a identidade cultural da nação. A combinação entre subfinanciamento…</p>
+          <div class="card-foot">
+            <span class="card-meta">5 parágrafos · 3 min de leitura</span>
+            <button class="card-btn" type="button" data-open="14" aria-label="Ler a redação 14 completa: Preservação dos monumentos históricos e memória coletiva no Brasil contemporâneo (Abordagem I)">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+        <article class="essay-card" data-cat="cultura" data-num="15" data-reveal>
+          <div class="card-top">
+            <span class="card-num">15</span>
+            <span class="card-cat">Cultura e patrimônio</span>
+          </div>
+          <h3 class="card-title">Preservação dos monumentos históricos e memória coletiva no Brasil contemporâneo (Abordagem II)</h3>
+          <p class="card-preview">A preservação dos monumentos históricos no Brasil contemporâneo enfrenta desafios estruturais que ameaçam a memória coletiva e a identidade cultural do país. A combinação entre subfinanciamento público,…</p>
+          <div class="card-foot">
+            <span class="card-meta">5 parágrafos · 3 min de leitura</span>
+            <button class="card-btn" type="button" data-open="15" aria-label="Ler a redação 15 completa: Preservação dos monumentos históricos e memória coletiva no Brasil contemporâneo (Abordagem II)">
+              Ler redação completa <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </article>
+      <!-- END:CARDS -->
+        </div>
+
+        <!-- Estado vazio da busca -->
+        <div class="empty-state" id="sem-resultados" hidden>
+          <p class="empty-title">Nenhuma redação encontrada</p>
+          <p class="empty-text">Tente outra palavra-chave ou selecione o tema “Todas”.</p>
+          <button class="btn btn-ghost" type="button" id="reset-filtros">Limpar busca e filtros</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SOBRE
+         ============================================================ -->
+    <section class="section" id="sobre">
+      <div class="wrap sobre-grid">
+        <div class="sobre-text" data-reveal>
+          <p class="eyebrow">Sobre este projeto</p>
+          <h2 class="section-title">Um site feito à mão, linha por linha</h2>
+          <p>
+            Este projeto nasceu como trabalho final de <strong>Programação Web</strong>, no 3º ano
+            do Ensino Médio. A ideia era simples: guardar em um só lugar as redações que escrevi
+            durante o ano e, ao mesmo tempo, colocar em prática o que aprendi de HTML, CSS e
+            JavaScript.
+          </p>
+          <p>
+            Todo o site foi escrito do zero, sem frameworks e sem bibliotecas externas: apenas
+            HTML5 semântico, CSS com variáveis de cor e um JavaScript puro que cuida do menu,
+            das animações de rolagem, da busca e da janela de leitura das redações.
+          </p>
+          <p class="sobre-sign">
+            <span data-config="nome">Seu Nome</span>
+            <span class="sobre-sign-meta">Concluinte do Ensino Médio <span aria-hidden="true">·</span> <span data-config="anoConclusao">2026</span></span>
+          </p>
+        </div>
+
+        <aside class="sobre-cards" data-reveal>
+          <div class="info-card">
+            <h3>Ficha técnica</h3>
+            <ul class="info-list">
+              <li><span>HTML5</span> estrutura semântica</li>
+              <li><span>CSS3</span> variáveis, grid e responsividade</li>
+              <li><span>JavaScript</span> interações sem bibliotecas</li>
+              <li><span>Hospedagem</span> GitHub Pages</li>
+            </ul>
+          </div>
+          <div class="info-card">
+            <h3>O que você encontra aqui</h3>
+            <ul class="info-list">
+              <li><span>15</span> redações completas com busca e filtro</li>
+              <li><span>06</span> fases da trajetória escolar</li>
+              <li><span>01</span> leitor em janela modal acessível</li>
+            </ul>
+          </div>
+          <div class="info-card info-card--quote">
+            <p>
+              “Escrever é organizar o pensamento. Programar também. Este site é a prova de que as
+              duas coisas cabem no mesmo lugar.”
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTATO
+         ============================================================ -->
+    <section class="section section-alt" id="contato">
+      <div class="wrap contato-inner" data-reveal>
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2 class="section-title">Vamos conversar?</h2>
+          <p class="section-lead">
+            Quer comentar uma redação, sugerir um tema ou falar sobre o projeto? É só me chamar.
+          </p>
+        </div>
+        <div class="contato-actions">
+          <!-- ✏️ EDITE AQUI: seu e-mail e seu usuário do GitHub -->
+          <a class="btn btn-primary" href="mailto:seu.email@exemplo.com">Enviar e-mail</a>
+          <a class="btn btn-ghost" href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p class="footer-brand"><span data-config="nome">Seu Nome</span> <span aria-hidden="true">·</span> Portfólio de Redações</p>
+      <p class="footer-note">Feito com HTML, CSS e JavaScript puro <span aria-hidden="true">·</span> Hospedado no GitHub Pages</p>
+      <a class="footer-top" href="#topo">Voltar ao topo <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante de voltar ao topo -->
+  <button class="to-top" id="to-top" type="button" aria-label="Voltar ao topo" hidden>
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <!-- ============================================================
+       JANELA MODAL DE LEITURA
+       ============================================================ -->
+  <div class="modal" id="modal-redacao" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" hidden>
+    <div class="modal-overlay" data-close="overlay"></div>
+    <div class="modal-panel" role="document">
+      <div class="modal-head">
+        <p class="modal-hint">Leitura completa <span aria-hidden="true">·</span> <kbd>Esc</kbd> para fechar</p>
+        <button class="modal-close" type="button" data-close="button" aria-label="Fechar leitura">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <!-- O conteúdo da redação é injetado aqui pelo JavaScript -->
+      <div class="modal-body" id="modal-conteudo"></div>
+
+      <div class="modal-foot">
+        <button class="modal-nav" type="button" data-nav="prev">
+          <span aria-hidden="true">←</span> Anterior
+        </button>
+        <p class="modal-count" id="modal-contador">1 de 15</p>
+        <button class="modal-nav" type="button" data-nav="next">
+          Próxima <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CONTEÚDO INTEGRAL DAS REDAÇÕES
+       Cada <template> guarda uma redação completa (transcrita do PDF
+       original); o JavaScript copia o conteúdo para a janela modal.
+       ============================================================ -->
+  <div class="templates" hidden>
+    <!-- BEGIN:TEMPLATES -->
