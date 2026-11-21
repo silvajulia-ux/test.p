@@ -590,6 +590,100 @@ kbd {
 /* =============================================================================
    06. LINHA DO TEMPO
    ============================================================================= */
+/* Caixa do modo de edição (textos salvos no navegador) */
+.tl-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-bottom: clamp(28px, 4vw, 44px);
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.tl-tools-copy {
+  display: grid;
+  gap: 4px;
+  max-width: 62ch;
+}
+
+.tl-tools-copy strong {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.tl-tools-copy span {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.tl-tools-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tl-tools-status {
+  flex-basis: 100%;
+  margin: 0;
+  min-height: 1.25em;
+  font-size: 0.8125rem;
+  color: var(--ink-soft);
+}
+
+.tl-tools-status:empty {
+  display: none;
+}
+
+/* Botão pequeno reutilizável */
+.btn-sm {
+  padding: 10px 16px;
+  font-size: 0.8125rem;
+}
+
+.tl-toggle-icon {
+  font-size: 0.9375rem;
+  line-height: 1;
+}
+
+/* Estado "editando": os campos ganham contorno tracejado */
+#trajetoria.is-editing [contenteditable="true"] {
+  padding: 6px 10px;
+  margin-inline: -10px;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  outline: none;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+#trajetoria.is-editing [contenteditable="true"]:hover {
+  border-color: var(--accent);
+}
+
+#trajetoria.is-editing [contenteditable="true"]:focus {
+  border-style: solid;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(39, 39, 42, 0.12);
+}
+
+/* Enquanto edita, a barra de ferramentas fica fixa no topo da seção */
+#trajetoria.is-editing .tl-tools {
+  position: sticky;
+  top: calc(var(--header-h) + 12px);
+  z-index: 20;
+  border-left-color: var(--accent-hover);
+}
+
 .timeline {
   position: relative;
   display: grid;
@@ -1084,7 +1178,6 @@ kbd {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  
 }
 
 .info-card h3 {

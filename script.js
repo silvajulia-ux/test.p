@@ -7,6 +7,7 @@
    02. Navegação: destaque da seção visível
    03. Animações de revelação ao rolar
    04. Linha do tempo: barra de progresso
+   04.1 Linha do tempo: textos editáveis (salvos no navegador)
    05. Redações: busca + filtro por tema
    06. Redações: janela modal de leitura completa
    07. Botão voltar ao topo
@@ -202,6 +203,194 @@ function iniciarProgressoLinhaDoTempo() {
   atualizar();
   window.addEventListener('scroll', atualizar, { passive: true });
   window.addEventListener('resize', atualizar);
+}
+
+/* =============================================================================
+   04.1 LINHA DO TEMPO: TEXTOS EDITÁVEIS
+   -----------------------------------------------------------------------------
+   Os relatos de cada fase podem ser escritos direto no site. O rascunho fica
+   salvo no localStorage do navegador (nada é enviado para nenhum servidor) e
+   pode ser restaurado para os textos de exemplo com um clique.
+   ============================================================================= */
+const CHAVE_LINHA_DO_TEMPO = 'portfolio-redacoes:linha-do-tempo';
+
+/** Lê o rascunho salvo; devolve null quando não existe ou está corrompido. */
+function lerRascunho() {
+  try {
+    const bruto = localStorage.getItem(CHAVE_LINHA_DO_TEMPO);
+    if (!bruto) return null;
+    const dados = JSON.parse(bruto);
+    return dados && typeof dados === 'object' ? dados : null;
+  } catch (erro) {
+    return null; /* navegador sem localStorage ou JSON inválido */
+  }
+}
+
+/** Tenta salvar; devolve false quando o navegador bloqueia o armazenamento. */
+function gravarRascunho(dados) {
+  try {
+    localStorage.setItem(CHAVE_LINHA_DO_TEMPO, JSON.stringify(dados));
+    return true;
+  } catch (erro) {
+    return false;
+  }
+}
+
+function apagarRascunho() {
+  try {
+    localStorage.removeItem(CHAVE_LINHA_DO_TEMPO);
+  } catch (erro) {
+    /* sem localStorage: nada a apagar */
+  }
+}
+
+function iniciarEdicaoTimeline() {
+  const secao = $('#trajetoria');
+  const campos = $$('[data-edit]', secao || document);
+  const botao = $('#tl-toggle');
+  const rotulo = $('#tl-toggle-label');
+  const restaurar = $('#tl-reset');
+  const status = $('#tl-status');
+  const caixa = $('.tl-tools');
+  if (!secao || !campos.length || !botao) return;
+
+  /* Guarda o HTML original de cada campo — serve para "Restaurar exemplos". */
+  const originais = new Map(campos.map((campo) => [campo.dataset.edit, campo.innerHTML]));
+  let editando = false;
+  let avisoTimer = null;
+
+  const avisar = (mensagem) => {
+    if (!status) return;
+    status.textContent = mensagem;
+    clearTimeout(avisoTimer);
+    avisoTimer = setTimeout(() => {
+      status.textContent = '';
+    }, 4000);
+  };
+
+  const coletar = () => {
+    const dados = {};
+    campos.forEach((campo) => {
+      dados[campo.dataset.edit] = campo.innerHTML;
+    });
+    return dados;
+  };
+
+  const salvar = () => {
+    const ok = gravarRascunho(coletar());
+    if (ok) {
+      if (caixa) caixa.dataset.pendente = 'nao';
+      avisar('Rascunho salvo neste navegador.');
+    } else {
+      avisar('O navegador bloqueou o armazenamento: o texto pode ser editado, mas não será salvo.');
+    }
+    return ok;
+  };
+
+  const salvarComAtraso = debounce(salvar, 600);
+
+  /* 1) Aplica o rascunho salvo (se existir) ao abrir a página. */
+  const rascunho = lerRascunho();
+  if (rascunho) {
+    let aplicados = 0;
+    campos.forEach((campo) => {
+      const valor = rascunho[campo.dataset.edit];
+      if (typeof valor === 'string' && valor.trim()) {
+        campo.innerHTML = valor;
+        aplicados += 1;
+      }
+    });
+    if (aplicados && restaurar) {
+      restaurar.hidden = false;
+      if (caixa) caixa.dataset.pendente = 'sim';
+    }
+  }
+
+  /* 2) Liga e desliga o modo de edição. */
+  const definirModo = (ligado) => {
+    editando = ligado;
+    secao.classList.toggle('is-editing', ligado);
+    botao.setAttribute('aria-pressed', String(ligado));
+    if (rotulo) rotulo.textContent = ligado ? 'Concluir edição' : 'Editar textos';
+
+    campos.forEach((campo) => {
+      campo.contentEditable = ligado ? 'true' : 'false';
+      if (ligado) campo.setAttribute('spellcheck', 'true');
+    });
+
+    if (ligado) {
+      avisar('Modo de edição ativado: clique em um texto e escreva. As alterações são salvas automaticamente.');
+      const primeiro = campos[0];
+      if (primeiro) {
+        primeiro.focus({ preventScroll: true });
+        /* Coloca o cursor no fim do texto, sem selecionar tudo */
+        const selecao = window.getSelection();
+        if (selecao) {
+          const intervalo = document.createRange();
+          intervalo.selectNodeContents(primeiro);
+          intervalo.collapse(false);
+          selecao.removeAllRanges();
+          selecao.addRange(intervalo);
+        }
+      }
+    } else {
+      const ok = salvar();
+      avisar(ok ? 'Edição concluída — rascunho salvo neste navegador.' : 'Edição concluída.');
+    }
+  };
+
+  botao.addEventListener('click', () => definirModo(!editando));
+
+  /* 3) Salva enquanto digita (com atraso) e ao sair do campo. */
+  campos.forEach((campo) => {
+    campo.addEventListener('input', () => {
+      if (!editando) return;
+      if (caixa) caixa.dataset.pendente = 'sim';
+      salvarComAtraso();
+    });
+    campo.addEventListener('blur', () => {
+      if (editando) salvar();
+    });
+    /* Colar sempre como texto puro evita trazer estilos de fora */
+    campo.addEventListener('paste', (event) => {
+      if (!editando) return;
+      event.preventDefault();
+      const texto = (event.clipboardData || window.clipboardData).getData('text/plain');
+      try {
+        document.execCommand('insertText', false, texto);
+      } catch (erro) {
+        campo.textContent += texto;
+      }
+    });
+  });
+
+  /* 4) Restaura os textos de exemplo do HTML. */
+  if (restaurar) {
+    restaurar.addEventListener('click', () => {
+      const confirmar = window.confirm(
+        'Restaurar os textos de exemplo? O rascunho salvo neste navegador será apagado.',
+      );
+      if (!confirmar) return;
+
+      campos.forEach((campo) => {
+        const original = originais.get(campo.dataset.edit);
+        if (typeof original === 'string') campo.innerHTML = original;
+      });
+      apagarRascunho();
+      restaurar.hidden = true;
+      if (caixa) caixa.dataset.pendente = 'nao';
+      if (editando) definirModo(false);
+      avisar('Textos de exemplo restaurados.');
+    });
+  }
+
+  /* 5) Avisa antes de sair com alterações ainda não gravadas. */
+  window.addEventListener('beforeunload', (event) => {
+    if (caixa && caixa.dataset.pendente === 'sim' && editando) {
+      event.preventDefault();
+      event.returnValue = '';
+    }
+  });
 }
 
 /* =============================================================================
@@ -535,7 +724,8 @@ document.addEventListener('DOMContentLoaded', () => {
   iniciarScrollSpy();
   iniciarRevelacoes();
   iniciarProgressoLinhaDoTempo();
-  iniciarBuscaEFiltros();
+  iniciarEdicaoTimeline();
+  iniciarBuscaEfiltros();
   iniciarModalLeitura();
   iniciarBotaoTopo();
 });
