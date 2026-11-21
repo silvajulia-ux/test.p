@@ -22,9 +22,9 @@
    Os elementos do HTML com atributo data-config="chave" são preenchidos aqui.
    ============================================================================= */
 const CONFIG = {
-  nome: 'Seu Nome',            // seu nome completo ou como quer ser chamado
-  iniciais: 'SN',              // iniciais exibidas no logotipo do cabeçalho
-  anoConclusao: '2026',        // ano de conclusão do Ensino Médio
+  nome: 'Lucas Marcelo de Freitas', // seu nome completo ou como quer ser chamado
+  iniciais: 'LM',                    // iniciais exibidas no logotipo do cabeçalho
+  anoConclusao: '2026',              // ano de conclusão do Ensino Médio
   email: 'seu.email@exemplo.com',
   github: 'https://github.com/seu-usuario',
 };
@@ -59,7 +59,7 @@ function aplicarConfig() {
     if (CONFIG[chave]) el.textContent = CONFIG[chave];
   });
 
-  if (CONFIG.nome && CONFIG.nome !== 'Seu Nome') {
+  if (CONFIG.nome) {
     document.title = `${CONFIG.nome} — Portfólio de Redações | Ensino Médio`;
   }
 
@@ -724,8 +724,13 @@ document.addEventListener('DOMContentLoaded', () => {
   iniciarScrollSpy();
   iniciarRevelacoes();
   iniciarProgressoLinhaDoTempo();
+<<<<<<< HEAD
+  iniciarEdicaoTimeline();
+  iniciarBuscaEFiltros();
+=======
   iniciarEdicaoTimeline();
   iniciarBuscaEfiltros();
+>>>>>>> ea3ae7619650e5b7ff0475083e112fb4a5e21b8d
   iniciarModalLeitura();
   iniciarBotaoTopo();
 });
