@@ -1,4 +1,4 @@
-/* =============================================================================
+//* =============================================================================
    PORTFÓLIO DE REDAÇÕES — ENSINO MÉDIO
    Folha de estilo única, em tons de cinza.
 
@@ -404,28 +404,19 @@ kbd {
 .hero-title {
   margin: 0 0 24px;
   font-family: var(--font-serif);
-  font-size: clamp(2.6rem, 6.4vw, 4.6rem);
+  font-size: clamp(2.35rem, 5.6vw, 4.3rem);
   font-weight: 600;
-  line-height: 1.02;
+  line-height: 1.08;
   letter-spacing: -0.02em;
 }
 
+/* Nome completo: pode quebrar em duas linhas sem criar rolagem horizontal */
 .hero-name {
-  position: relative;
-  display: inline-block;
-  white-space: nowrap;
-}
-
-/* Sublinhado tipo marca-texto atrás do nome */
-.hero-name::after {
-  content: "";
-  position: absolute;
-  left: -0.02em;
-  right: -0.02em;
-  bottom: 0.05em;
-  height: 0.14em;
-  background: var(--surface-muted);
-  z-index: -1;
+  text-decoration: underline;
+  text-decoration-color: var(--surface-muted);
+  text-decoration-thickness: 0.085em;
+  text-underline-offset: 0.14em;
+  text-decoration-skip-ink: auto;
 }
 
 .hero-lead {
